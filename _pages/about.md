@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I’m a Master’s student in Robotics at UC Berkeley, currently exploring the intersection of intelligent systems, optimization, and control. I work as a Graduate Student Researcher at [PATH](https://path.berkeley.edu), building large-scale traffic simulation tools to evaluate the impact of infrastructure changes on human and autonomous driver behavior.
+Hi! I'm a Master's student in Robotics at UC Berkeley, currently exploring the intersection of intelligent systems, optimization, and control. I work as a Graduate Student Researcher at [PATH](https://path.berkeley.edu), building large-scale traffic simulation tools to evaluate the impact of infrastructure changes on human and autonomous driver behavior.
 
 Previously, I studied Mechanical Engineering at McGill University and interned at Tesla, Beta Technologies, and Vention, where I worked on embedded systems, mechatronic design, and simulation tooling for robotic platforms.
 
@@ -47,13 +47,24 @@ I'm broadly interested in how learning-based systems can act, adapt, and reason 
     <p><strong>Luai Abuelsamen</strong></p>
     <p>
       <a href="https://github.com/einjun03/drone_follower">🔗 Code</a> · 
-      <a href="https://drive.google.com/file/d/1fDzkQsQkkZZLiuYc3AgknRpwYNxpTFnID/view?usp=sharing">🎥 Video</a>
+      <a href="https://drive.google.com/file/d/1fDzkQsQkkZZLiuYc3AgknRpwYNpTFnID/view?usp=drive_link">🎥 Video</a>
+    </p>
+  </div>
+</div>
+
+<div class="project-card">
+  <img src="/images/rocket_trajectory.gif" alt="Rocket Landing Optimization" />
+  <div class="project-content">
+    <h3><strong>Rocket Landing Trajectory Optimization</strong></h3>
+    <p><strong>Luai Abuelsamen</strong></p>
+    <p>
+      <a href="https://github.com/luaiabuelsamen/SoftLandingMPC">🔗 Code</a> · 
+      <a href="https://docs.google.com/document/d/11QCTM3BNVeIW7PA9SoeAVAMo6YDuA-Zh4ko_VKOMwwU/edit?usp=sharing">📄 Report</a>
     </p>
   </div>
 </div>
 
 </div>
-
 
 <style>
 .project-grid {
