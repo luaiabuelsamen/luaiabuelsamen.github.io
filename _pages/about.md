@@ -51,8 +51,8 @@ I'm broadly interested in how learning-based systems can act, adapt, and reason 
       <h3><strong>Industrial Robot Motion Planning with GPUs</strong></h3>
       <p>Integrated NVIDIA cuRobo into modular automation systems for real-time, collision-free trajectory planning in multi-axis robotic platforms.</p>
       <p>
-        <a href="https://github.com/luaiabuelsamen/VentionMotionPlanner">🔗 Code</a>
-        <a href="https://arxiv.org/abs/2508.04146">📄 Paper/a>
+        <a href="https://github.com/luaiabuelsamen/VentionMotionPlanner">🔗 Code</a> · 
+        <a href="https://arxiv.org/abs/2508.04146">📄 Paper</a>
       </p>
     </div>
   </div>
@@ -75,7 +75,7 @@ I'm broadly interested in how learning-based systems can act, adapt, and reason 
       <h3><strong>Multimodal Perception in Imitation Learning</strong></h3>
       <p>Theoretical analysis of RGB-D, proprioceptive, and language input effects on sample complexity and optimization landscapes in imitation learning.</p>
       <p>
-        <a href="https://arxiv.org/abs/2508.05077">📄 Paper</a>
+        <a href="https://arxiv.org/abs/2508.05077">📄 Paper</a> · 
         <a href="https://github.com/luaiabuelsamen/pick_and_place">🔗 Code</a>
       </p>
     </div>
@@ -113,9 +113,11 @@ I'm broadly interested in how learning-based systems can act, adapt, and reason 
 .project-card {
   border-radius: 10px;
   padding: 1rem;
-  background: #fafafa;
+  background: var(--background-color, #fafafa);
+  border: 1px solid var(--border-color, #e1e1e1);
   box-shadow: 0 3px 8px rgba(0,0,0,0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: var(--text-color, #333);
 }
 .project-card:hover {
   transform: translateY(-3px);
@@ -131,13 +133,49 @@ I'm broadly interested in how learning-based systems can act, adapt, and reason 
 .project-content h3 {
   margin: 0 0 0.4rem;
   font-size: 1.1rem;
+  color: var(--heading-color, #222);
 }
 .project-content p {
   margin: 0.25rem 0;
   font-size: 0.9rem;
   line-height: 1.4;
+  color: var(--text-color, #555);
 }
 .project-content a {
   text-decoration: none;
+  color: var(--link-color, #0066cc);
+}
+.project-content a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .project-card {
+    background: #1a1a1a;
+    border-color: #333;
+    color: #e1e1e1;
+  }
+  .project-content h3 {
+    color: #ffffff;
+  }
+  .project-content p {
+    color: #cccccc;
+  }
+  .project-content a {
+    color: #66b3ff;
+  }
+}
+
+/* Ensure consistent card heights */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.project-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 </style>
