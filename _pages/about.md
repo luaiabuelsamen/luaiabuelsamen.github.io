@@ -113,11 +113,13 @@ I'm broadly interested in how learning-based systems can act, adapt, and reason 
 .project-card {
   border-radius: 10px;
   padding: 1rem;
-  background: var(--background-color, #fafafa);
-  border: 1px solid var(--border-color, #e1e1e1);
+  background: #fafafa;
+  border: 1px solid #e1e1e1;
   box-shadow: 0 3px 8px rgba(0,0,0,0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  color: var(--text-color, #333);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .project-card:hover {
   transform: translateY(-3px);
@@ -130,52 +132,67 @@ I'm broadly interested in how learning-based systems can act, adapt, and reason 
   border-radius: 6px;
   margin-bottom: 0.75rem;
 }
+.project-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
 .project-content h3 {
   margin: 0 0 0.4rem;
   font-size: 1.1rem;
-  color: var(--heading-color, #222);
+  color: #222;
 }
 .project-content p {
   margin: 0.25rem 0;
   font-size: 0.9rem;
   line-height: 1.4;
-  color: var(--text-color, #555);
+  color: #555;
 }
 .project-content a {
   text-decoration: none;
-  color: var(--link-color, #0066cc);
+  color: #0066cc;
 }
 .project-content a:hover {
   text-decoration: underline;
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .project-card {
-    background: #1a1a1a;
-    border-color: #333;
-    color: #e1e1e1;
-  }
-  .project-content h3 {
-    color: #ffffff;
-  }
-  .project-content p {
-    color: #cccccc;
-  }
-  .project-content a {
-    color: #66b3ff;
-  }
+/* Dark mode support - only when explicitly set by theme */
+[data-theme="dark"] .project-card,
+.dark .project-card {
+  background: #1a1a1a;
+  border-color: #333;
+}
+[data-theme="dark"] .project-content h3,
+.dark .project-content h3 {
+  color: #ffffff;
+}
+[data-theme="dark"] .project-content p,
+.dark .project-content p {
+  color: #cccccc;
+}
+[data-theme="dark"] .project-content a,
+.dark .project-content a {
+  color: #66b3ff;
 }
 
-/* Ensure consistent card heights */
-.project-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.project-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+/* Fallback for system dark mode preference, but only if theme supports it */
+@media (prefers-color-scheme: dark) {
+  body.dark-mode .project-card,
+  html.dark .project-card {
+    background: #1a1a1a;
+    border-color: #333;
+  }
+  body.dark-mode .project-content h3,
+  html.dark .project-content h3 {
+    color: #ffffff;
+  }
+  body.dark-mode .project-content p,
+  html.dark .project-content p {
+    color: #cccccc;
+  }
+  body.dark-mode .project-content a,
+  html.dark .project-content a {
+    color: #66b3ff;
+  }
 }
 </style>
