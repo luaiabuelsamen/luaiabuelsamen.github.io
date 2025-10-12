@@ -9,7 +9,7 @@ redirect_from:
 
 Hi! I'm a Master's student in Robotics at UC Berkeley working on embodied AI systems that bridge foundation models with real-world control. My research spans from multimodal perception for robot manipulation to large-scale autonomous systems simulation.
 
-Currently, I work as a Graduate Student Researcher at [PATH](https://path.berkeley.edu), building traffic simulation tools to evaluate infrastructure impacts on autonomous vehicle behavior. I also collaborate with the [Autonomy, Robotics, and Controls (ARC)](https://sites.google.com/berkeley.edu/prof-roberto-horowitz/people) Lab on manipulation research combining learning-based control with multimodal perception.
+Currently, I work as a Graduate Student Researcher at [PATH](https://path.berkeley.edu), building traffic simulation tools to evaluate infrastructure impacts on autonomous vehicle behavior. I also collaborated with the [Autonomy, Robotics, and Controls (ARC)](https://sites.google.com/berkeley.edu/prof-roberto-horowitz/people) Lab on manipulation research combining learning-based control with multimodal perception.
 
 Previously, I studied Mechanical Engineering at McGill University and interned at Tesla, Beta Technologies, and Vention, where I worked on embedded systems, mechatronic design, and simulation tooling for robotic platforms.
 
@@ -51,10 +51,13 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
   <div class="project-card">
     <img src="/images/traffic.gif" alt="PATH Simulation" />
     <div class="project-content">
-      <h3><strong>Autonomous Vehicle Infrastructure Impact Study</strong></h3>
-      <p>Funded research position developing microsimulation models using Aimsun Next to assess freeway auxiliary lane removal impacts on mainline and arterial flows in mixed autonomy scenarios.</p>
+      <h3><strong>Rerouting Impacts of Auxiliary Lanes</strong></h3>
       <p>
-        <a href="https://drive.google.com/file/d/1Uvhiqlq9BkToVlS6ZZTnwhuWWCBXudWC/view?usp=sharing">📄 Paper (submitted to TRB)</a>
+        Conducted microsimulation research using <strong>Aimsun Next</strong> to evaluate how auxiliary lane removal affects freeway and arterial network performance in mixed-autonomy scenarios.
+        Work performed at <strong>UC Berkeley – California PATH</strong>.
+      </p>
+      <p>
+        <a href="https://escholarship.org/uc/item/1gg418bj" target="_blank">📄 Paper (To be Presented at TRB 2026)</a>
       </p>
     </div>
   </div>
@@ -81,6 +84,18 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
         <a href="https://docs.google.com/document/d/11QCTM3BNVeIW7PA9SoeAVAMo6YDuA-Zh4ko_VKOMwwU/edit?usp=sharing">📄 Report</a>
       </p>
     </div>
+  </div>
+
+  <div class="project-card">
+  <img src="/images/ukf.png" alt="Bicycle State Estimation" />
+  <div class="project-content">
+    <h3><strong>Bicycle State Estimation with Unscented Kalman Filter</strong></h3>
+    <p>Developed a UKF-based state estimator for a nonlinear bicycle model with uncertain parameters, achieving competitive performance (rank 2/40) through optimized process/measurement noise modeling and parameter estimation.</p>
+    <p>
+      <a href="https://github.com/luaiabuelsamen/bicycleUKF">🔗 Code</a> · 
+      <a href="https://docs.google.com/document/d/1-iXOVhVvppCwLht-kK2v6961NiM5JcD_/edit?usp=sharing&ouid=112127017269080790989&rtpof=true&sd=true">📄 Report</a>
+    </p>
+  </div>
   </div>
 
   <div class="project-card">
