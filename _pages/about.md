@@ -37,6 +37,17 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
   </div>
 
   <div class="project-card">
+    <img src="/images/robot1.gif" alt="LeRobot Experiments" />
+    <div class="project-content">
+      <h3><strong>Imitation Learning with Residual RL Fine-Tuning</strong></h3>
+      <p>Trained imitation learning policies using LeRobot framework and fine-tuned them in simulation with residual reinforcement learning, combining behavior cloning with policy optimization for improved robotic manipulation performance.</p>
+      <p>
+        <a href="https://github.com/luaiabuelsamen/LerobotExperiments">🔗 Code</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="project-card">
     <img src="/images/gpu.png" alt="Industrial Robot Motion Planning" />
     <div class="project-content">
       <h3><strong>Industrial Robot Motion Planning with GPUs</strong></h3>
