@@ -130,6 +130,17 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
     </div>
   </div>
 
+  <div class="project-card">
+    <img src="/images/meccanum.png" alt="jarVIs Mecanum Robot" />
+    <div class="project-content">
+      <h3><strong>BLE-Controlled Mecanum Robot with FreeRTOS</strong></h3>
+      <p>Developed embedded firmware in C for a mecanum-drive mobile robot featuring dual-mode operation (autonomous/manual), BLE GATT server, ultrasonic obstacle detection, and PWM motor control—all orchestrated with real-time FreeRTOS task scheduling.</p>
+      <p>
+        <a href="https://github.com/KingLuLu-cal/jarVIs">🔗 Code</a>
+      </p>
+    </div>
+  </div>
+  
 </div>
 
 <style>
