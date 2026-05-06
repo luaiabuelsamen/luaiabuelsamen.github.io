@@ -48,10 +48,10 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
   </div>
 
   <div class="project-card">
-    <img src="/images/go2_trot.gif" alt="Go2 Quadruped Locomotion" />
+    <img src="/images/go2_before_after.gif" alt="Go2 Quadruped: PPO teacher vs Flow-Matching student" />
     <div class="project-content">
-      <h3><strong>Sim-to-Sim PPO Fine-Tuning of a Quadruped Locomotion Policy</strong></h3>
-      <p>Fine-tuned the pretrained walk-these-ways Go2 policy from Isaac Gym to MuJoCo on a Jetson Orin NX, porting the full CoRL gait-shaping reward (von-Mises smoothed contact targets, raibert heuristic, ji22-style multiplicative gating) so the trot survives the sim-to-sim physics gap.</p>
+      <h3><strong>Sim-to-Sim PPO Fine-Tuning + Flow-Matching Distillation of a Quadruped Locomotion Policy</strong></h3>
+      <p>First, fine-tuned the pretrained walk-these-ways Go2 policy from Isaac Gym to MuJoCo on a Jetson Orin NX, porting the full CoRL gait-shaping reward (von-Mises smoothed contact targets, raibert heuristic, ji22-style multiplicative gating) so the trot survives the sim-to-sim physics gap. Then distilled the RL teacher into an 11M-param flow-matching student (transformer encoder + AdaRMSNorm action expert with a 4-step ODE solver), trained on 215k demo transitions.</p>
       <p>
         <a href="https://github.com/luaiabuelsamen/Go2_locomotion">🔗 Code</a>
       </p>
