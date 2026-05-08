@@ -59,6 +59,17 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
   </div>
 
   <div class="project-card">
+    <img src="/images/geometric-learning.png" alt="SO(3)-equivariant point cloud autoencoder" />
+    <div class="project-content">
+      <h3><strong>SO(3)-Structured Latent Space for 3D Point Clouds</strong></h3>
+      <p>Trained a Perceiver-style point cloud autoencoder on ModelNet10 where the pose latent is a 3×3 matrix that transforms equivariantly under SO(3) — rotating the input by R rotates the latent as <code>R · z_pose</code>, while a separate content latent stays invariant. The load-bearing test is the cycle loss <code>dec(z_content, R · z_pose) ≈ rotated input</code>, which forces the decoder to actually use the latent group action rather than ignore it. Final results: 0.030 equivariance error, 0.004 content-rotation std, cycle reconstruction matching direct encode-decode. 2.25M params, trained in 10 min on a Jetson Orin.</p>
+      <p>
+        <a href="https://github.com/luaiabuelsamen/geometric-learning">🔗 Code</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="project-card">
     <img src="/images/gpu.png" alt="Industrial Robot Motion Planning" />
     <div class="project-content">
       <h3><strong>Industrial Robot Motion Planning with GPUs</strong></h3>
