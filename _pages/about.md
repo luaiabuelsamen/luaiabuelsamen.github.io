@@ -59,10 +59,10 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
   </div>
 
   <div class="project-card">
-    <img src="/images/geometric-learning.png" alt="Closed-form group-action latent dynamics: pose-latent error vs rollout step, six orders of magnitude gap between architectural prior and learned baseline" />
+    <img src="/images/geometric-learning.gif" alt="Animated chair rotating with the inferred z_pose latent drawn as RGB axes — equivariance is visible as the axes tracking the chair rotation exactly" />
     <div class="project-content">
       <h3><strong>Hard-Equivariant Latent Dynamics for 3D World Models</strong></h3>
-      <p>Built a hard SO(3)-equivariant 3D point cloud world model — Vector Neurons encoder + FoldingNet decoder + closed-form group-action latent dynamics — to test whether architectural geometric priors give provable extrapolation to unseen rotations. The result: latent pose error of <strong>10⁻⁸</strong> across every rollout step in both in-distribution and OOD rotation regimes (essentially machine-epsilon — equivariance is an architectural identity, not a soft loss), versus <strong>10⁻²</strong> for a learned-MLP baseline of comparable capacity, and a <strong>140×</strong> gap in decoded reconstruction error at large OOD rotations. End-to-end on a Jetson Orin in under 30 minutes.</p>
+      <p>Built a hard SO(3)-equivariant 3D point cloud world model — Vector Neurons encoder + closed-form group-action latent dynamics — to test whether architectural geometric priors give provable extrapolation to rotations outside the training distribution. Latent pose error sits at machine epsilon (<strong>~10⁻⁸</strong>) across every rollout step in both regimes, vs <strong>10⁻¹</strong> for a learned-MLP baseline; at large OOD rotations the decoded reconstruction is an order of magnitude better. End-to-end on a Jetson Orin.</p>
       <p>
         <a href="https://github.com/luaiabuelsamen/geometric-learning">🔗 Code</a>
       </p>
