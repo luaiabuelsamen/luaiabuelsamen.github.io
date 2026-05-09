@@ -59,10 +59,10 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
   </div>
 
   <div class="project-card">
-    <img src="/images/geometric-learning.png" alt="SO(3)-equivariant point cloud autoencoder" />
+    <img src="/images/geometric-learning.png" alt="Closed-form group-action latent dynamics — pose-latent error vs rollout step on in-distribution and OOD rotations" />
     <div class="project-content">
-      <h3><strong>SO(3)-Structured Latent Space for 3D Point Clouds</strong></h3>
-      <p>Trained a Perceiver-style point cloud autoencoder on ModelNet10 where the pose latent is a 3×3 matrix that transforms equivariantly under SO(3) — rotating the input by R rotates the latent as <code>R · z_pose</code>, while a separate content latent stays invariant. The load-bearing test is the cycle loss <code>dec(z_content, R · z_pose) ≈ rotated input</code>, which forces the decoder to actually use the latent group action rather than ignore it. Final results: 0.030 equivariance error, 0.004 content-rotation std, cycle reconstruction matching direct encode-decode. 2.25M params, trained in 10 min on a Jetson Orin.</p>
+      <h3><strong>Closed-Form Group-Action Latent Dynamics for OOD Rotation Extrapolation</strong></h3>
+      <p>Built a SO(3)-structured latent autoencoder for 3D point clouds (Perceiver-style, ModelNet10), then trained two latent dynamics models on top: a <em>baseline</em> all-MLP that predicts latent deltas, and a <em>hybrid</em> that updates the pose latent via the exact group action <code>R(a) · z_pose</code> with no learned parameters for the rigid part. Trained on small-magnitude rotations <code>|a| ∈ [0, π/4]</code>, evaluated on out-of-distribution magnitudes <code>|a| ∈ [π/2, π]</code> never seen at training. Result: closed-form group action sits exactly on the encoder's equivariance noise floor at every rollout step in both regimes (~3×10⁻³ in-dist, ~2×10⁻² OOD), while the all-MLP baseline is 1000× worse in latent space. Decoded Chamfer hides this entirely due to decoder mean-shape collapse — a methodological warning about evaluating latent world model dynamics through reconstruction quality alone. 2.25M-param autoencoder + tiny dynamics heads, end-to-end on a Jetson Orin in ~20 min total.</p>
       <p>
         <a href="https://github.com/luaiabuelsamen/geometric-learning">🔗 Code</a>
       </p>
