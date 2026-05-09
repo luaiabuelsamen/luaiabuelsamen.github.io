@@ -59,10 +59,10 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
   </div>
 
   <div class="project-card">
-    <img src="/images/geometric-learning.png" alt="Closed-form group-action latent dynamics — pose-latent error vs rollout step on in-distribution and OOD rotations" />
+    <img src="/images/geometric-learning.png" alt="Closed-form group-action latent dynamics: pose-latent error vs rollout step, six orders of magnitude gap between architectural prior and learned baseline" />
     <div class="project-content">
-      <h3><strong>Closed-Form Group-Action Latent Dynamics for OOD Rotation Extrapolation</strong></h3>
-      <p>Built a SO(3)-structured latent autoencoder for 3D point clouds (Perceiver-style, ModelNet10), then trained two latent dynamics models on top: a <em>baseline</em> all-MLP that predicts latent deltas, and a <em>hybrid</em> that updates the pose latent via the exact group action <code>R(a) · z_pose</code> with no learned parameters for the rigid part. Trained on small-magnitude rotations <code>|a| ∈ [0, π/4]</code>, evaluated on out-of-distribution magnitudes <code>|a| ∈ [π/2, π]</code> never seen at training. Result: closed-form group action sits exactly on the encoder's equivariance noise floor at every rollout step in both regimes (~3×10⁻³ in-dist, ~2×10⁻² OOD), while the all-MLP baseline is 1000× worse in latent space. Decoded Chamfer hides this entirely due to decoder mean-shape collapse — a methodological warning about evaluating latent world model dynamics through reconstruction quality alone. 2.25M-param autoencoder + tiny dynamics heads, end-to-end on a Jetson Orin in ~20 min total.</p>
+      <h3><strong>Hard-Equivariant Latent Dynamics for 3D World Models</strong></h3>
+      <p>Built a hard SO(3)-equivariant 3D point cloud world model — Vector Neurons encoder + FoldingNet decoder + closed-form group-action latent dynamics — to test whether architectural geometric priors give provable extrapolation to unseen rotations. The result: latent pose error of <strong>10⁻⁸</strong> across every rollout step in both in-distribution and OOD rotation regimes (essentially machine-epsilon — equivariance is an architectural identity, not a soft loss), versus <strong>10⁻²</strong> for a learned-MLP baseline of comparable capacity, and a <strong>140×</strong> gap in decoded reconstruction error at large OOD rotations. End-to-end on a Jetson Orin in under 30 minutes.</p>
       <p>
         <a href="https://github.com/luaiabuelsamen/geometric-learning">🔗 Code</a>
       </p>
