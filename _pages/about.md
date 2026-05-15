@@ -25,6 +25,15 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
 <div class="project-grid">
 
   <div class="project-card">
+    <img src="/images/dextrack_vega.gif" alt="DexTrack-style manipulation tracking on the Dexmate Vega humanoid" />
+    <div class="project-content">
+      <h3><strong>DexTrack-Style RL Tracking on Dexmate Vega</strong></h3>
+      <p>Work in progress on bringing DexTrack-style manipulation tracking to the Dexmate Vega humanoid in MuJoCo, starting with single-arm control and extending toward coordinated bimanual nonprehensile manipulation.</p>
+      <p>Built around cumulative residual action targets, object pose tracking, and physically consistent in-sim reference generation for pushing and reorientation tasks.</p>
+    </div>
+  </div>
+
+  <div class="project-card">
     <img src="/images/voxels.png" alt="Multimodal Imitation Learning" />
     <div class="project-content">
       <h3><strong>Multimodal Perception in Imitation Learning</strong></h3>
@@ -43,6 +52,17 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
       <p>Trained imitation learning policies using LeRobot framework and fine-tuned them in simulation with residual reinforcement learning, combining behavior cloning with policy optimization for improved robotic manipulation performance.</p>
       <p>
         <a href="https://github.com/luaiabuelsamen/LerobotExperiments">🔗 Code</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <img src="/images/rvt_lerobot_pipeline.png" alt="RVT pipeline: 4 real RGBD cameras fused into a point cloud, then re-rendered from 5 fixed orthographic virtual cameras (front, top, left, right, back) for the multi-view transformer to attend over" />
+    <div class="project-content">
+      <h3><strong>RVT for LeRobot — Multi-View Transformer Policy (WIP)</strong></h3>
+      <p>Bridging <a href="https://github.com/NVlabs/RVT">NVlabs/RVT</a> into Hugging Face's LeRobot ecosystem, which currently ships only RGB / dense-action policies. Built a MuJoCo SO-ARM100 env with 4 RGBD cameras, a PerAct/RLBench-format episode writer (depth packed as 24-bit RGB PNGs), and a <code>PreTrainedPolicy</code>-shaped wrapper that delegates to RVT's agent. The hero figure shows the actual trick: 4 real RGBD cams → fused 60k-point cloud → 5 orthographic virtual views — the multi-view transformer attends over the bottom row, and the projection step is <em>geometric, not learned</em>.</p>
+      <p>
+        <a href="https://github.com/luaiabuelsamen/rvt-lerobot">🔗 Code</a>
       </p>
     </div>
   </div>
