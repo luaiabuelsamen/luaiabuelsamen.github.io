@@ -25,6 +25,20 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
 <div class="project-grid">
 
   <div class="project-card">
+    <video src="/images/humanoid_getup.mp4" poster="/images/humanoid_getup.jpg"
+           autoplay loop muted playsinline preload="metadata"
+           aria-label="One PPO policy standing the 21-DOF humanoid up from supine, prone, side, and kneeling starts"></video>
+    <div class="project-content">
+      <h3><strong>Humanoid Getup from Arbitrary Pose</strong></h3>
+      <p>One brax PPO policy stands a 21-DOF dm_control humanoid up from supine, prone, side, kneeling, or already standing. Each pose needs a different first move (sit-up, push-up to all fours, roll to supine) out of the same network.</p>
+      <p>The stock reward is zero below head height 1.05, so supine starts had no gradient to follow. A non-saturating head-height bonus plus a kneel snapshot in the init mix took stand reward from 189 to 868 out of 1000. Trained with MJX on Modal H100s.</p>
+      <p>
+        <a href="https://github.com/luaiabuelsamen/humanoid_getup">🔗 Code</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="project-card">
     <img src="/images/dextrack_vega.gif" alt="DexTrack-style manipulation tracking on the Dexmate Vega humanoid" />
     <div class="project-content">
       <h3><strong>DexTrack-Style RL Tracking on Dexmate Vega</strong></h3>
@@ -208,12 +222,19 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
   transform: translateY(-3px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.1);
 }
-.project-card img {
+.project-card img,
+.project-card video {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 6px;
   margin-bottom: 0.75rem;
+  display: block;
+  background: #0d1b2a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card, .project-card:hover { transition: none; transform: none; }
 }
 .project-content {
   flex-grow: 1;
