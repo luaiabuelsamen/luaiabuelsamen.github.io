@@ -7,9 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I'm a Master's student in Robotics at UC Berkeley working on embodied AI systems that bridge foundation models with real-world control. My research spans from multimodal perception for robot manipulation to large-scale autonomous systems simulation.
+Hi! I'm a robotics engineer working on embodied AI systems that bridge foundation models with real-world control. My work spans multimodal perception for robot manipulation to large-scale autonomous systems simulation.
 
-Currently, I work as a Graduate Student Researcher at [PATH](https://path.berkeley.edu), building traffic simulation tools to evaluate infrastructure impacts on autonomous vehicle behavior. I also collaborated with the [Autonomy, Robotics, and Controls (ARC)](https://sites.google.com/berkeley.edu/prof-roberto-horowitz/people) Lab on manipulation research combining learning-based control with multimodal perception.
+I hold an M.Eng from UC Berkeley in Mechanical Engineering, concentrating on control of robotic and autonomous systems. There I was a Graduate Student Researcher at [PATH](https://path.berkeley.edu), building traffic simulation tools to evaluate infrastructure impacts on autonomous vehicle behavior, and collaborated with the [Autonomy, Robotics, and Controls (ARC)](https://sites.google.com/berkeley.edu/prof-roberto-horowitz/people) Lab on manipulation research combining learning-based control with multimodal perception.
 
 Previously, I studied Mechanical Engineering at McGill University and interned at Tesla, Beta Technologies, and Vention, where I worked on embedded systems, mechatronic design, and simulation tooling for robotic platforms.
 
