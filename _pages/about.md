@@ -96,7 +96,7 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
     <img src="/images/geometric-learning.gif" alt="Animated chair rotating with the inferred z_pose latent drawn as RGB axes — equivariance is visible as the axes tracking the chair rotation exactly" />
     <div class="project-content">
       <h3><strong>Hard-Equivariant Latent Dynamics for 3D World Models</strong></h3>
-      <p>Built a hard SO(3)-equivariant 3D point cloud world model — Vector Neurons encoder + closed-form group-action latent dynamics — to test whether architectural geometric priors give provable extrapolation to rotations outside the training distribution. Latent pose error sits at machine epsilon (<strong>~10⁻⁸</strong>) across every rollout step in both regimes, vs <strong>10⁻¹</strong> for a learned-MLP baseline; at large OOD rotations the decoded reconstruction is an order of magnitude better. End-to-end on a Jetson Orin.</p>
+      <p>Built a hard SO(3)-equivariant 3D point cloud world model — Vector Neurons encoder + closed-form group-action latent dynamics — to test whether architectural geometric priors give provable extrapolation to rotations outside the training distribution. Latent pose error sits at the encoder's equivariance noise floor (<strong>~10⁻⁸</strong> mean squared Frobenius error) across every rollout step in both regimes, against <strong>~10⁻²</strong> in the same metric for a learned-MLP baseline. At large OOD rotations the decoded chamfer distance is <strong>0.13 against 18.6</strong>, a 140× gap. End-to-end on a Jetson Orin.</p>
       <p>
         <a href="https://github.com/luaiabuelsamen/geometric-learning">🔗 Code</a>
       </p>
