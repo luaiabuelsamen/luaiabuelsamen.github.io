@@ -39,11 +39,14 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
   </div>
 
   <div class="project-card">
-    <img src="/images/dextrack_vega.gif" alt="DexTrack-style manipulation tracking on the Dexmate Vega humanoid" />
+    <img src="/images/bimanual_retarget.gif" alt="Six GRAB clips retargeted onto two Allegro hands: gamecontroller, camera, binoculars, mug, bowl, and teapot" />
     <div class="project-content">
-      <h3><strong>DexTrack-Style RL Tracking on Dexmate Vega</strong></h3>
-      <p>Work in progress on bringing DexTrack-style manipulation tracking to the Dexmate Vega humanoid in MuJoCo, starting with single-arm control and extending toward coordinated bimanual nonprehensile manipulation.</p>
-      <p>Built around cumulative residual action targets, object pose tracking, and physically consistent in-sim reference generation for pushing and reorientation tasks.</p>
+      <h3><strong>Two-Hand Retargeting for Dexterous Manipulation</strong></h3>
+      <p>Retargeting human grasps from the GRAB dataset onto two Allegro hands, in DexTrack's own reference format, so a tracking policy can be trained on two-handed clips. DexTrack only ships a right hand. Mirroring it turned up a bug in their left URDF: the ring finger's mount rotation isn't mirrored, which splays the finger the wrong way and moves the tip 19 mm.</p>
+      <p>Measuring the retargeted references also showed fingers sitting 3.2–8.8 mm inside the object, so tracking the reference and not crushing the object pull against each other. Six clips shown here; the policy side runs in Isaac Gym and is still in progress.</p>
+      <p>
+        <a href="https://github.com/luaiabuelsamen/dextrack-bimanual-sim">🔗 Code</a>
+      </p>
     </div>
   </div>
 
