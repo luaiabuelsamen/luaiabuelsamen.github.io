@@ -31,7 +31,7 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
     <div class="project-content">
       <h3><strong>Humanoid Getup from Arbitrary Pose</strong></h3>
       <p>One brax PPO policy stands a 21-DOF dm_control humanoid up from supine, prone, side, kneeling, or already standing. Each pose needs a different first move (sit-up, push-up to all fours, roll to supine) out of the same network.</p>
-      <p>The stock reward is zero below head height 1.05, so supine starts had no gradient to follow. A non-saturating head-height bonus plus a kneel snapshot in the init mix took stand reward from 189 to 868 out of 1000. Trained with MJX on Modal H100s.</p>
+      <p>The stock reward is zero below head height 1.05, so supine starts had no gradient to follow. A non-saturating head-height bonus, plus a kneeling snapshot in the starting-pose mix, gave the policy a gradient from every start. Trained with MJX on Modal H100s.</p>
       <p>
         <a href="https://github.com/luaiabuelsamen/humanoid_getup">🔗 Code</a>
       </p>
@@ -46,6 +46,18 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
       <p>Measuring DexTrack's released references showed fingers sitting 3.2–8.8 mm inside the object across nine clips, so tracking the reference and not crushing the object pull against each other. Six retargeted clips shown here; the two-hand policy is still in progress.</p>
       <p>
         <a href="https://github.com/luaiabuelsamen/dextrack-bimanual-sim">🔗 Code</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <img src="/images/libphys_hero.gif" alt="Two grasping policies lift the same hidden balls: top sees pad forces, bottom sees gel marker images; balls gripped too hard turn red" />
+    <div class="project-content">
+      <h3><strong>libphys: GPU Tactile Simulation with Partial-Slip Contact</strong></h3>
+      <p>A GPU tactile simulator whose gel fingertip pads report pressure, shear and marker displacement, solved as an elastic contact problem rather than with penalty springs. A gripper must lift fragile balls of hidden mass and friction without crushing them.</p>
+      <p>In simulation, a policy that sees the gel's marker images succeeds <strong>67%</strong> of the time against <strong>36%</strong> for one that sees pad forces (3 seeds, 4,096 held-out episodes each). The marker field shows the rim of the contact starting to slip, which force readings cannot.</p>
+      <p>
+        <a href="https://github.com/luaiabuelsamen/PhysicsEngine">🔗 Code</a>
       </p>
     </div>
   </div>
@@ -99,7 +111,7 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
     <img src="/images/geometric-learning.gif" alt="Animated chair rotating with the inferred z_pose latent drawn as RGB axes — equivariance is visible as the axes tracking the chair rotation exactly" />
     <div class="project-content">
       <h3><strong>Hard-Equivariant Latent Dynamics for 3D World Models</strong></h3>
-      <p>Built a hard SO(3)-equivariant 3D point cloud world model — Vector Neurons encoder + closed-form group-action latent dynamics — to test whether architectural geometric priors give provable extrapolation to rotations outside the training distribution. Latent pose error sits at the encoder's equivariance noise floor (<strong>~10⁻⁸</strong> mean squared Frobenius error) across every rollout step in both regimes, against <strong>~10⁻²</strong> in the same metric for a learned-MLP baseline. At large OOD rotations the decoded chamfer distance is <strong>0.13 against 18.6</strong>, a 140× gap. End-to-end on a Jetson Orin.</p>
+      <p>Built a hard SO(3)-equivariant 3D point cloud world model — Vector Neurons encoder + closed-form group-action latent dynamics — to test whether architectural geometric priors give provable extrapolation to rotations outside the training distribution. Latent pose error stays at the encoder's equivariance noise floor at every rollout step, inside and outside the training rotations. A learned-MLP baseline is orders of magnitude worse in the same metric, and its decoded reconstruction diverges at large out-of-distribution rotations while the equivariant model's stays flat. End-to-end on a Jetson Orin.</p>
       <p>
         <a href="https://github.com/luaiabuelsamen/geometric-learning">🔗 Code</a>
       </p>
