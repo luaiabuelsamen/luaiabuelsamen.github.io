@@ -42,8 +42,8 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
     <img src="/images/bimanual_retarget.gif" alt="Six GRAB clips retargeted onto two Allegro hands: gamecontroller, camera, binoculars, mug, bowl, and teapot" />
     <div class="project-content">
       <h3><strong>Two-Hand Retargeting for Dexterous Manipulation</strong></h3>
-      <p>Retargeting human grasps from the GRAB dataset onto two Allegro hands, in DexTrack's own reference format, so a tracking policy can be trained on two-handed clips. DexTrack only ships a right hand. Mirroring it turned up a bug in their left URDF: the ring finger's mount rotation isn't mirrored, which splays the finger the wrong way and moves the tip 19 mm.</p>
-      <p>Measuring the retargeted references also showed fingers sitting 3.2–8.8 mm inside the object, so tracking the reference and not crushing the object pull against each other. Six clips shown here; the policy side runs in Isaac Gym and is still in progress.</p>
+      <p>An extension of <a href="https://github.com/Meowuu7/DexTrack">DexTrack</a> (Liu et al.), whose tracking policy, task and single right-hand references are theirs. My part: a left Allegro hand and two-hand references from GRAB clips in DexTrack's format, so a tracker can be trained on two-handed clips. Mirroring their hand turned up a bug in their left URDF: the ring finger's mount rotation isn't mirrored, which splays the finger the wrong way.</p>
+      <p>Measuring DexTrack's released references showed fingers sitting 3.2–8.8 mm inside the object across nine clips, so tracking the reference and not crushing the object pull against each other. Six retargeted clips shown here; the two-hand policy is still in progress.</p>
       <p>
         <a href="https://github.com/luaiabuelsamen/dextrack-bimanual-sim">🔗 Code</a>
       </p>
@@ -107,10 +107,33 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
   </div>
 
   <div class="project-card">
+    <img src="/images/mpc_parking_traffic.gif" alt="Three cars: one parallel-parks while a follower passes through the opposing lane around an oncoming car" />
+    <div class="project-content">
+      <h3><strong>Multi-Car Parking with Distributed MPC</strong></h3>
+      <p>A dependency-free C++17 planner and controller: Hybrid A* routes, then one constrained iLQR controller per car, each optimizing against the others' broadcast predictions under a 150 ms decision budget, with a checked braking fallback. Kinematic simulation with perfectly shared state.</p>
+      <p>In the checked-in stress benchmark all 13 two-car cases (7 named, 6 seeded) finish with no collisions and no deadline misses, and all 6 three-car traffic cases pass.</p>
+      <p>
+        <a href="https://github.com/luaiabuelsamen/MPC_parking">🔗 Code</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <img src="/images/vega_curobo_bimanual.gif" alt="Dexmate Vega humanoid upper body following moving balls with both arms in MuJoCo" />
+    <div class="project-content">
+      <h3><strong>GPU Motion Planning for a Humanoid Upper Body</strong></h3>
+      <p>cuRobo planning and MPC for the Dexmate Vega 1U in MuJoCo, both loading the same URDF: reaching, chasing moving goals with one or both arms as one kinematic chain, and pick-and-place with the held object attached to the plan. A geometric impedance controller (control law from Seo et al., <a href="https://arxiv.org/abs/2504.17080">arXiv:2504.17080</a>) executes plans with torques under gravity.</p>
+      <p>
+        <a href="https://github.com/luaiabuelsamen/vega_curobo">🔗 Code</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="project-card">
     <img src="/images/gpu.png" alt="Industrial Robot Motion Planning" />
     <div class="project-content">
       <h3><strong>Industrial Robot Motion Planning with GPUs</strong></h3>
-      <p>Integrated NVIDIA cuRobo into modular automation systems for real-time, collision-free trajectory planning in multi-axis robotic platforms, achieving significant speedups for industrial applications.</p>
+      <p>Integrated NVIDIA cuRobo into Vention's modular automation systems for collision-free trajectory planning on multi-axis platforms, including a UR5e on a gantry, simulated in MuJoCo.</p>
       <p>
         <a href="https://github.com/luaiabuelsamen/VentionMotionPlanner">🔗 Code</a> · 
         <a href="https://arxiv.org/abs/2508.04146">📄 Paper</a>
@@ -148,7 +171,7 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
     <img src="/images/rocket_trajectory.gif" alt="Rocket Landing Optimization" />
     <div class="project-content">
       <h3><strong>Rocket Landing Trajectory Optimization</strong></h3>
-      <p>Implemented SOCP-based convex optimization in Python for soft landing guidance, accounting for vehicle dynamics, control limits, and environmental constraints with real-time performance.</p>
+      <p>6-DoF powered-descent guidance in Python by successive convexification: each iteration solves an SOCP subject to thrust, gimbal, glide-slope, tilt and body-rate limits, with free final time. The landing shown is the optimized controls propagated open-loop through the nonlinear dynamics, not the optimizer's nodes. Offline solver, not real time.</p>
       <p>
         <a href="https://github.com/luaiabuelsamen/SoftLandingMPC">🔗 Code</a> · 
         <a href="https://docs.google.com/document/d/11QCTM3BNVeIW7PA9SoeAVAMo6YDuA-Zh4ko_VKOMwwU/edit?usp=sharing">📄 Report</a>
