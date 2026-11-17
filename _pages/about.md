@@ -25,6 +25,19 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
 <div class="project-grid">
 
   <div class="project-card">
+    <img src="/images/v2d_method.png" alt="V2D Track 2 method figure: three permitted inputs scored against one ground truth, one policy per sequence selected by an input-only rule, warm-start re-fitting to a cleaner reference, and results against the CHORD baseline" />
+    <div class="project-content">
+      <h3><strong>NVIDIA Video-to-Data Challenge, Track 2: Robotic Grounding</strong></h3>
+      <p>Solo entry: one FlashCHORD SAC policy per sequence drives a Unitree G1 with Dex3 hands to reproduce 30 human manipulation clips, scored on the object trajectory the robot achieves. All three tiers share one ground truth and differ only in the reference a submission may condition on, so everything shipped per clip reads the input alone: a checkpoint-selection rule registered before the run, and warm-start fine-tuning to the cleaner reference Tier 1 permits.</p>
+      <p>Substituting that cleaner reference under an already-trained actor cost 0.18 AUC; warm-start re-fitting to it, under a no-regression adoption gate, gained 0.08 at $0.57 per clip. Final entry: Tier 1 AUC 0.605 vs the CHORD baseline 0.510, Tier 2 0.471 vs 0.374, at $166 total compute. Every local score matched the public leaderboard to five decimals.</p>
+      <p>
+        <a href="https://github.com/luaiabuelsamen/v2d-track2">🔗 Code</a> ·
+        <a href="https://github.com/luaiabuelsamen/v2d-track2/blob/main/docs/TECHNICAL_REPORT.pdf">📄 Report</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="project-card">
     <video src="/images/humanoid_getup.mp4" poster="/images/humanoid_getup.jpg"
            autoplay loop muted playsinline preload="metadata"
            aria-label="One PPO policy standing the 21-DOF humanoid up from supine, prone, side, and kneeling starts"></video>
