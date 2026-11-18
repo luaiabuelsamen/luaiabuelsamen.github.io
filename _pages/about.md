@@ -25,7 +25,7 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
 <div class="project-grid">
 
   <div class="project-card">
-    <img src="/images/v2d_method.png" alt="V2D Track 2 method figure: three permitted inputs scored against one ground truth, one policy per sequence selected by an input-only rule, warm-start re-fitting to a cleaner reference, and results against the CHORD baseline" />
+    <img src="/images/v2d_system.png" alt="V2D Track 2 system diagram: human demonstration to a permitted reference at three tiers, retargeting to a Unitree G1 with Dex3 hands, one FlashCHORD SAC policy per sequence, input-only checkpoint selection, the kit packer, scoring against ground truth below a line nothing above reads, and a warm-start re-fit loop to a cleaner reference" />
     <div class="project-content">
       <h3><strong>NVIDIA Video-to-Data Challenge, Track 2: Robotic Grounding</strong></h3>
       <p>Solo entry: one FlashCHORD SAC policy per sequence drives a Unitree G1 with Dex3 hands to reproduce 30 human manipulation clips, scored on the object trajectory the robot achieves. All three tiers share one ground truth and differ only in the reference a submission may condition on, so everything shipped per clip reads the input alone: a checkpoint-selection rule registered before the run, and warm-start fine-tuning to the cleaner reference Tier 1 permits.</p>
