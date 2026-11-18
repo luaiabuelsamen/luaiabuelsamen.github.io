@@ -27,9 +27,8 @@ Previously, I studied Mechanical Engineering at McGill University and interned a
   <div class="project-card">
     <img src="/images/v2d_system.png" alt="V2D Track 2 system diagram: human demonstration to a permitted reference at three tiers, retargeting to a Unitree G1 with Dex3 hands, one FlashCHORD SAC policy per sequence, input-only checkpoint selection, the kit packer, scoring against ground truth below a line nothing above reads, and a warm-start re-fit loop to a cleaner reference" />
     <div class="project-content">
-      <h3><strong>NVIDIA Video-to-Data Challenge, Track 2: Robotic Grounding</strong></h3>
-      <p>Solo entry: one FlashCHORD SAC policy per sequence drives a Unitree G1 with Dex3 hands to reproduce 30 human manipulation clips, scored on the object trajectory the robot achieves. All three tiers share one ground truth and differ only in the reference a submission may condition on, so everything shipped per clip reads the input alone: a checkpoint-selection rule registered before the run, and warm-start fine-tuning to the cleaner reference Tier 1 permits.</p>
-      <p>Substituting that cleaner reference under an already-trained actor cost 0.18 AUC; warm-start re-fitting to it, under a no-regression adoption gate, gained 0.08 at $0.57 per clip. Final entry: Tier 1 AUC 0.605 vs the CHORD baseline 0.510, Tier 2 0.471 vs 0.374, at $166 total compute. Every local score matched the public leaderboard to five decimals.</p>
+      <h3><strong>NVIDIA Video-to-Data Challenge, Track 2</strong></h3>
+      <p>One SAC policy per sequence drives a Unitree G1 with Dex3 hands to reproduce 30 human manipulation clips in simulation. Per-clip checkpoints are selected by a rule that reads only the input reference, and policies are warm-started onto a cleaner reference under a no-regression gate. Tier 1 AUC 0.605 and Tier 2 0.471 against the CHORD baselines of 0.510 and 0.374, for $166 of compute.</p>
       <p>
         <a href="https://github.com/luaiabuelsamen/v2d-track2">🔗 Code</a> ·
         <a href="https://github.com/luaiabuelsamen/v2d-track2/blob/main/docs/TECHNICAL_REPORT.pdf">📄 Report</a>
